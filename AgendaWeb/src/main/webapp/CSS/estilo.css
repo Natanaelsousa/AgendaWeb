@@ -4,11 +4,84 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
 /* 
-    Created on : 16/10/2016, 21:17:48
-    Author     : natan
+    Created on : 16/10/2016, 21:32:00
+    Author     : Erik
 */
 
 label {
-  display: inline-block;
-  width: 150px;
+    margin-top: 0.5em;
 }
+
+fieldset{
+	
+	width: 450px;
+}
+
+input {
+	margin-top: 0.5em;
+	width: 300px;
+        display: block;
+
+}
+
+.nascimetno > input{
+
+width: 130px;
+	
+}	
+
+.telefone > input{
+
+width: 170px;
+	
+}	
+
+form{
+	position: relative;
+	left: 20%;
+}
+
+h1{
+
+	position: relative;
+	left: 6%;
+	color: gray;
+
+}	
+
+
+fieldset {
+	
+	border-radius:0.8em;
+
+}
+
+.bot :nth-child(1) {
+	color: green;
+}	
+
+.bot :nth-child(2) {
+	color: red;
+}	
+
+button{
+	
+	position: relative;
+	left: 20%;
+    width:80px;
+    height:26px;
+    font-weight:bold;
+	border-radius:0.8em;
+}
+
+button:hover {
+	
+ cursor: pointer;
+ border-bottom-color:blue;
+ 
+}
+
+
+
+
+
