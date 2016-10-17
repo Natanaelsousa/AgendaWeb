@@ -13,35 +13,17 @@
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>JSP Page</title>
+    <title>Lista de Contatos</title>
   </head>
   <body>
-    <h1>Dados prenchidos</h1>
+    <h1>Lista de Contatos</h1>
     <div>
       <p>Nome: <c:out value="${nome}" /></p>
+      <p>Data de nascimento:<fmt:formatDate value="${dtnascimento}" pattern="dd/MM/yyyy" /></p>
+      <p>Telefone: <c:out value="${telefone}"/></p>
       <p>E-mail: <c:out value="${email}" /></p>
-      <p>Senha: <c:out value="${senha}" /></p>
-      <p>
-	Data de nascimento:
-	<fmt:formatDate value="${dtnascimento}" pattern="dd/MM/yyyy" />
-      </p>
-      <p>
-	Salário:
-	
-      </p>
-      <p>Sexo:
-	<c:choose>
-	  <c:when test="${sexo == 1}">
-	  <p>Masculino</p>
-	</c:when>
-	<c:otherwise>
-	  <p>Feminino</p>
-	</c:otherwise>
-      </c:choose>
-    </p>
-    <p>Interesses: <c:out value="${fn:join(interesses, ', ')}" /></p>
-    <p>Opção: opção <c:out value="${fn:toUpperCase(opcao)}" /></p>
-    <a href="teste-servlet">Voltar para a tela do TesteServlet</a>
+      
+    <a href="Formulario">Voltar para a tela de cadastro</a>
   </p>
 </div>
 </body>

@@ -30,16 +30,7 @@ public class Formulario extends HttpServlet {
 	  throws ServletException, IOException {
     response.setContentType("text/html;charset=UTF-8");
     try (PrintWriter out = response.getWriter()) {
-      /* TODO output your page here. You may use following sample code. */
-      out.println("<!DOCTYPE html>");
-      out.println("<html>");
-      out.println("<head>");
-      out.println("<title>Servlet FormularioServlet</title>");      
-      out.println("</head>");
-      out.println("<body>");
-      out.println("<h1>Servlet FormularioServlet at " + request.getContextPath() + "</h1>");
-      out.println("</body>");
-      out.println("</html>");
+     
     }
   }
 
@@ -71,22 +62,17 @@ public class Formulario extends HttpServlet {
 	  throws ServletException, IOException {
     
     String nome = request.getParameter("nome");
+    String nascimento = request.getParameter("nascimento");
+    String telefone = request.getParameter("telefone");
     String email = request.getParameter("email");
-    String senha = request.getParameter("senha");
-    String dtNascStr = request.getParameter("dtnasc");
-    String sexoStr = request.getParameter("sexo");
-    String[] interesses = request.getParameterMap().get("interesses");
-    String opcaoStr = request.getParameter("opcao");
     
     DateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
     Date dtNasc = null;
     try {
-      dtNasc = formatador.parse(dtNascStr);
+      dtNasc = formatador.parse(nascimento);
     } catch (ParseException ex) {
       //TODO: Fazer tratamento se data for invalida
     }
-    
-    int sexo = Integer.parseInt(sexoStr);
 
     // PROCESSAMENTO DOS DADOS
     
@@ -95,13 +81,10 @@ public class Formulario extends HttpServlet {
     // Nao confundir get/setAttribute com getParameter!!!
     request.setAttribute("id", request.getParameter("id"));
     request.setAttribute("nome", nome);
+    request.setAttribute("nascimento", nascimento);
+    request.setAttribute("telefone", telefone);
     request.setAttribute("email", email);
-    request.setAttribute("senha", senha);
-    request.setAttribute("dtnascimento", dtNasc);
-    request.setAttribute("salario", new BigDecimal(1000000));
-    request.setAttribute("sexo", sexo);
-    request.setAttribute("interesses", interesses);
-    request.setAttribute("opcao", opcaoStr);
+   
     
     // Encaminhamento para o processamento continuar no jsp.
     RequestDispatcher dispatcher =
