@@ -3,10 +3,6 @@ package agenda_web.agendaweb;
 
 import java.util.Date;
 
-/**
- *
- * @author fernando.tsuda
- */
 public class Contato {
 
     private Long id;

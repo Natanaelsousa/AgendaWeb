@@ -13,14 +13,14 @@ label {
 }
 
 fieldset{
-	
-	width: 450px;
+    width: 450px;
 }
 
 input {
-	margin-top: 0.5em;
-	width: 300px;
-        display: block;
+    
+    margin-top: 0.5em;
+    width: 300px;
+    display: block;
 
 }
 
@@ -65,13 +65,13 @@ fieldset {
 }	
 
 button{
-	
-	position: relative;
-	left: 20%;
+
+    position: relative;
+    left: 20%;
     width:80px;
     height:26px;
     font-weight:bold;
-	border-radius:0.8em;
+    border-radius:0.8em;
 }
 
 button:hover {
