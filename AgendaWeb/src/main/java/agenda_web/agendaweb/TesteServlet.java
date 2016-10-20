@@ -68,15 +68,15 @@ public class TesteServlet extends HttpServlet {
   protected void doGet(HttpServletRequest request, HttpServletResponse response)
 	  throws ServletException, IOException {
     
-    Pessoa p1 = new Pessoa("Fulano da Silva", "fulano@zmail.com", 1);
-    Pessoa p2 = new Pessoa("Ciclano de Souza", "ciclano@zmail.com", 1);
-    Pessoa p3 = new Pessoa("Maria", "maria@zmail.com", 0);
-    List<Pessoa> lista = Arrays.asList(p1, p2, p3);
+//    Pessoa p1 = new Pessoa("Fulano da Silva", "fulano@zmail.com", 1);
+//    Pessoa p2 = new Pessoa("Ciclano de Souza", "ciclano@zmail.com", 1);
+//    Pessoa p3 = new Pessoa("Maria", "maria@zmail.com", 0);
+//    List<Pessoa> lista = Arrays.asList(p1, p2, p3);
     
     
     // Configura os objetos p1 e p2 como atributos da requisição para
-    // repassá-los ao jsp
-    request.setAttribute("listaPessoas", lista);
+//    // repassá-los ao jsp
+//    request.setAttribute("listaPessoas", lista);
     
     // Encaminhamento para o processamento continuar no jsp.
     RequestDispatcher dispatcher =

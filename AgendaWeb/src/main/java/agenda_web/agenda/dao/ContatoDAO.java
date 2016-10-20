@@ -1,11 +1,14 @@
+package agenda_web.agenda.dao;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package agenda_web.agendaweb;
 
-import agenda_web.agendaweb.Contato;
+
+import agenda_web.agenda.entidade.Contato;
+import agenda_web.agendaweb.ConexaoBD;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

@@ -1,5 +1,5 @@
 
-package agenda_web.agendaweb;
+package agenda_web.agenda.entidade;
 
 import java.util.Date;
 

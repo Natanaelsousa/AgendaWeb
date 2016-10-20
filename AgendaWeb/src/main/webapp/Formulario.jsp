@@ -11,7 +11,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Entrada</title>
-        <c:url value="css/estilos.css" var="urlEstilos" />
+        <c:url value="CSS/estilo.css" var="urlEstilos" />
         <link rel="stylesheet" href="${urlEstilos}" />
     </head>
     <body>
