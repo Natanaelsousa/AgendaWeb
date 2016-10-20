@@ -30,7 +30,9 @@ import java.util.logging.Logger;
  */
 public class ContatoDAO extends ConexaoBD {
 
-
+  public ContatoDAO (){
+      
+  }
   public Contato obterContato(long idContato) {
     PreparedStatement stmt = null;
     Connection conn = null;
@@ -243,62 +245,4 @@ public class ContatoDAO extends ConexaoBD {
       }
     }
   }
-
-  public static void main(String[] args) {
-    ContatoDAO instancia = new ContatoDAO();
-    Scanner entrada = new Scanner(System.in);
-    do {
-      System.out.println("********** DIGITE UMA OPÇÃO **********");
-      System.out.println("(1) Listar agenda");
-      System.out.println("(2) Incluir registro");
-      System.out.println("(3) Alterar registro");
-      System.out.println("(4) Excluir registro");
-      System.out.println("(9) SAIR");
-      System.out.print("Opção: ");
-      int opcao = entrada.nextInt();
-
-      switch (opcao) {
-        case 1:
-          instancia.listar();
-          break;
-        case 2:
-          String nome;
-          Date dataNasc;
-          String email;
-          String telefone;
-
-          // ENTRADA DE DADOS
-          System.out.print("Digite o nome da pessoa: ");
-          nome = entrada.nextLine();
-
-          System.out.print("Digite a data de nascimento no formato dd/mm/aaaa: ");
-          String strDataNasc = entrada.nextLine();
-          DateFormat formatadorData = new SimpleDateFormat("dd/MM/yyyy");
-          try {
-            dataNasc = formatadorData.parse(strDataNasc);
-          } catch (ParseException ex) {
-            Logger.getLogger(ContatoDAO.class.getName()).log(Level.SEVERE, null, ex);
-            dataNasc = new Date();
-          }
-          System.out.print("Digite o telefone no formato 99 99999-9999: ");
-          telefone = entrada.nextLine();
-
-          System.out.print("Digite o e-mail: ");
-          email = entrada.nextLine();
-
-          //instancia.incluir(nome, dataNasc, telefone, email);
-          break;
-        case 3:
-          break;
-        case 4:
-          break;
-        case 9:
-          System.exit(0);
-        default:
-          System.out.println("OPÇÃO INVÁLIDA.");
-      }
-
-    } while (true);
-  }
-
 }

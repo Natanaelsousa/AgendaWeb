@@ -5,6 +5,8 @@
  */
 package agenda_web.agendaweb;
 
+import agenda_web.agenda.dao.ContatoDAO;
+import agenda_web.agenda.entidade.Contato;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.DateFormat;
@@ -73,8 +75,13 @@ public class Formulario extends HttpServlet {
       //TODO: Fazer tratamento se data for invalida
     }
 
-    // PROCESSAMENTO DOS DADOS
+    // PROCESSAMENTO DOS DADOS //String nome, Date dtNascimento, String email, String telefone
+    //inserindo contato no banco
+    Contato contato = new Contato (nome,dtNasc,email,telefone);
     
+    ContatoDAO sql = new ContatoDAO();
+    
+    sql.incluir(contato);
     
     // Seta os atributos para compartilhar os valores com o jsp
     // Nao confundir get/setAttribute com getParameter!!!
