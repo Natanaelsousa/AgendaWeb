@@ -105,14 +105,14 @@ public class Formulario extends HttpServlet {
     // Nao confundir get/setAttribute com getParameter!!!
     request.setAttribute("id", request.getParameter("id"));
     request.setAttribute("nome", nome);
-    request.setAttribute("nascimento", nascimento);
+    request.setAttribute("nascimento", dtNasc);
     request.setAttribute("telefone", telefone);
     request.setAttribute("email", email);
    
     
     // Encaminhamento para o processamento continuar no jsp.
     RequestDispatcher dispatcher =
-	    request.getRequestDispatcher("resposta.jsp");
+	    request.getRequestDispatcher("ListaContatos.jsp");
     dispatcher.forward(request, response);
    
     
