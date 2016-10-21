@@ -16,7 +16,7 @@
     </head>
     <body>
         <c:url value="Formulario" var="urlFormulario" />
-        <form action="${urlFormulario}" method="post" enctype="application/x-www-form-urlencoded">
+        <form action="${urlFormulario}" method="post">
             <h1>Agenda de contatos</h1>
             <fieldset>
                 <p class="nome">

@@ -163,7 +163,7 @@ public class ContatoDAO extends ConexaoBD {
       ResultSet generatedKeys = stmt.getGeneratedKeys();
       if (generatedKeys.next()) {
         long idNovo = generatedKeys.getLong(1);
-        System.out.println("***** ID NOVO CADASTRADO: " + String.valueOf(idNovo));
+        ///////System.out.println("***** ID NOVO CADASTRADO: " + String.valueOf(idNovo));
         
         // Executar próximos INSERTs USANDO O ID novo.
       }

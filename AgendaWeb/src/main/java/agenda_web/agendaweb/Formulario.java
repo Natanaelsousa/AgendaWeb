@@ -7,12 +7,16 @@ package agenda_web.agendaweb;
 
 import agenda_web.agenda.dao.ContatoDAO;
 import agenda_web.agenda.entidade.Contato;
+import static com.sun.corba.se.impl.util.Utility.printStackTrace;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.text.DateFormat;
+import static java.lang.System.out;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -25,6 +29,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author natan
  */
 @WebServlet(name = "Formulario", urlPatterns = {"/Formulario"})
+
 public class Formulario extends HttpServlet {
 
      protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -48,6 +53,8 @@ public class Formulario extends HttpServlet {
   protected void doGet(HttpServletRequest request, HttpServletResponse response)
 	  throws ServletException, IOException {
     processRequest(request, response);
+    
+    
   }
 
   /**
@@ -61,27 +68,38 @@ public class Formulario extends HttpServlet {
   @Override
   protected void doPost(HttpServletRequest request, HttpServletResponse response)
 	  throws ServletException, IOException {
-    
-    String nome = request.getParameter("nome");
+     String nome = request.getParameter("nome");
     String nascimento = request.getParameter("nascimento");
     String telefone = request.getParameter("telefone");
     String email = request.getParameter("email");
     
-    DateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
-    Date dtNasc = null;
-    try {
-      dtNasc = formatador.parse(nascimento);
-    } catch (ParseException ex) {
-      //TODO: Fazer tratamento se data for invalida
-    }
+     Date dtNasc;
+         try {
+             dtNasc = new SimpleDateFormat("yyyy-MM-dd").parse(nascimento);
+         } catch (ParseException ex) {
+             out.println("Erro de conversão de data");
+             return;
+         }
+   
+   
 
     // PROCESSAMENTO DOS DADOS //String nome, Date dtNascimento, String email, String telefone
     //inserindo contato no banco
-    Contato contato = new Contato (nome,dtNasc,email,telefone);
+    Contato contato = new Contato ();
+    contato.setNome(nome);
+    contato.setEmail(email);
+    contato.setTelefone(telefone);
+    contato.setDtNascimento(dtNasc);
     
     ContatoDAO sql = new ContatoDAO();
     
     sql.incluir(contato);
+    
+    out.println("<html>");
+    out.println("<body>");
+    out.println("Contato" +contato.getNome()+" adicionado com sucesso");
+    out.println("</body>");
+    out.println("</html>");
     
     // Seta os atributos para compartilhar os valores com o jsp
     // Nao confundir get/setAttribute com getParameter!!!
@@ -96,6 +114,8 @@ public class Formulario extends HttpServlet {
     RequestDispatcher dispatcher =
 	    request.getRequestDispatcher("resposta.jsp");
     dispatcher.forward(request, response);
+   
+    
     
   }
 
