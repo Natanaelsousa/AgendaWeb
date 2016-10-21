@@ -21,19 +21,13 @@
         <h1>Lista de contatos</h1>
         <c:forEach items="${listaPessoas}" var="p">
             <div>
-                <p><c:out value="${p.nome}" /></p>
-                <p><c:out value="${p.email}" /></p>
-                <c:choose>
-                    <c:when test="${p.sexo == 1}">
-                        <p>Masculino</p>
-                    </c:when>
-                    <c:otherwise>
-                        <p>Feminino</p>
-                    </c:otherwise>
-                </c:choose>
+                <p>Nome: <c:out value="${nome}" /></p>
+                <p>Data de nascimento:<fmt:formatDate value="${dtnascimento}" pattern="dd/MM/yyyy" /></p>
+                <p>Telefone: <c:out value="${telefone}"/></p>
+                <p>E-mail: <c:out value="${email}" /></p>
             </div>
         </c:forEach>
-    <a href="Formulario">Voltar para a tela de cadastro</a>
+        <a href="Formulario">Voltar para a tela de cadastro</a>
     </body>
 </html>
 
