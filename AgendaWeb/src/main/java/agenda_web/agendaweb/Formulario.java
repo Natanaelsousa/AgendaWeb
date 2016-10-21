@@ -26,7 +26,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author natan
+ * @author Natanael
  */
 @WebServlet(name = "Formulario", urlPatterns = {"/Formulario"})
 

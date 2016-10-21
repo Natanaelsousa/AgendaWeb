@@ -29,7 +29,7 @@ import java.sql.SQLException;
 
 /**
  *
- * @author fernando.tsuda
+ * @author Erik
  */
 public class ConexaoBD {
 

@@ -1,7 +1,7 @@
 <%-- 
     Document   : Formulario
     Created on : 16/10/2016, 21:14:59
-    Author     : natan
+    Author     : Natanael
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
